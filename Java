@@ -1,0 +1,56 @@
+package Praktikum_PP;
+
+import java.util.Scanner;
+
+public class Percabangan {
+   public static void main(String[] args) {
+       Scanner s = new Scanner(System.in);
+       System.out.print("Masukan umur costumer = ");
+       int umur = s.nextInt();
+       System.out.print("Masukan berat badan costumer = ");
+       int beratBadan = s.nextInt();
+       System.out.print("Masukan total belanja costumer = ");
+       int totalBelanja = s.nextInt();
+       int potongan = 0;
+       if (totalBelanja > 50000 && umur > 16) {
+           //kondisi true
+           int persentasePotongan = 0;
+           if (umur <= 25) {
+               persentasePotongan = beratBadan / 10;
+           }else if (umur <= 50) {
+               persentasePotongan = beratBadan / 5;
+           }else{
+               persentasePotongan = beratBadan / 2;
+               
+           }
+           potongan = totalBelanja * persentasePotongan / 100;
+           System.out.println(" Anda Mendapatkan mendapatkan" +
+                   " potongan " + persentasePotongan + " % " +
+                   " dari Rp " + totalBelanja +
+                   " sebesar Rp " + potongan);
+       }else{
+           //kondisi false
+           System.out.println("Anda belum mendapatkan promo");
+       }
+       int totalHarusBayar = totalBelanja - potongan;
+       System.out.println("------------------------------");
+       System.out.println("Umur : " + umur);
+       System.out.println("Berat Badan : " + beratBadan);
+       System.out.println("Total Belanja : " + totalBelanja);
+       System.out.println("Potongan Promo : " + potongan);
+       System.out.println("Total harus dibayar : " + totalHarusBayar);
+       
+               
+       
+       
+      
+          
+                
+                 
+            }
+        }
+   }
+
+     
+    
+}
